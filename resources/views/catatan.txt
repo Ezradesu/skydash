@@ -1,0 +1,3 @@
+/* ini gua komentar dulu soalnya bikin gambar di table jadi bulet */
+.table td img,
+.jsgrid .jsgrid-table td img {}
