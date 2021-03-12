@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'BlogController@index');
+Route::get('/about', 'BlogController@about');
+Route::get('/blog', 'BlogController@blog_list');
+Route::get('/blog/{slug}', 'BlogController@blog_isi');
+Route::get('/blog/category/{category}', 'BlogController@list_category');
 
 Route::get('/dashboard', function () {
     return view('dashboard.index');

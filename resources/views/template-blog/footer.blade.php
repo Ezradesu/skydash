@@ -1,101 +1,53 @@
-	<!-- FOOTER -->
-	<footer id="footer">
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<div class="row">
-				<div class="col-md-3">
-					<div class="footer-widget">
-						<div class="footer-logo">
-							<a href="index.html" class="logo"><img src="./img/logo-alt.png" alt=""></a>
-						</div>
-						<p>Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.</p>
-						<ul class="contact-social">
-							<li><a href="#" class="social-facebook"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#" class="social-twitter"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#" class="social-google-plus"><i class="fa fa-google-plus"></i></a></li>
-							<li><a href="#" class="social-instagram"><i class="fa fa-instagram"></i></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="footer-widget">
-						<h3 class="footer-title">Categories</h3>
-						<div class="category-widget">
-							<ul>
-								@foreach($category_widget as $hasil)
-								<li><a href="#">{</span></a></li>
-								@endforeach
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="footer-widget">
-						<h3 class="footer-title">Tags</h3>
-						<div class="tags-widget">
-							<ul>
-								<li><a href="#">Social</a></li>
-								<li><a href="#">Lifestyle</a></li>
-								<li><a href="#">Blog</a></li>
-								<li><a href="#">Travel</a></li>
-								<li><a href="#">Technology</a></li>
-								<li><a href="#">Fashion</a></li>
-								<li><a href="#">Life</a></li>
-								<li><a href="#">News</a></li>
-								<li><a href="#">Magazine</a></li>
-								<li><a href="#">Food</a></li>
-								<li><a href="#">Health</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="footer-widget">
-						<h3 class="footer-title">Newsletter</h3>
-						<div class="newsletter-widget">
-							<form>
-								<p>Nec feugiat nisl pretium fusce id velit ut tortor pretium.</p>
-								<input class="input" name="newsletter" placeholder="Enter Your Email">
-								<button class="primary-button">Subscribe</button>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- /row -->
-
-			<!-- row -->
-			<div class="footer-bottom row">
-				<div class="col-md-6 col-md-push-6">
-					<ul class="footer-nav">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="about.html">About Us</a></li>
-						<li><a href="contact.html">Contacts</a></li>
-						<li><a href="#">Advertise</a></li>
-						<li><a href="#">Privacy</a></li>
-					</ul>
-				</div>
-				<div class="col-md-6 col-md-pull-6">
-					<div class="footer-copyright">
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					</div>
-				</div>
-			</div>
-			<!-- /row -->
-		</div>
-		<!-- /container -->
-	</footer>
-	<!-- /FOOTER -->
-
-	<!-- jQuery Plugins -->
-	<script src="{{ asset('frontend/js/jquery.min.js') }}"></script>
-	<script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
-	<script src="{{ asset('frontend/js/jquery.stellar.min.js') }}"></script>
-	<script src="{{ asset('frontend/js/main.js') }}"></script>
-
-</body>
-
-</html>
+<section class="edica-footer-banner-section">
+        <div class="container">
+            <div class="footer-banner">
+                <h1 class="banner-title">This is the end</h1>
+                <div class="banner-btns-wrapper">
+                    <a href="/about" class="btn btn-success"> <i class="fas fa-paperclip mr-2"></i> About Us</a>
+                    <a href="/acount" class="btn btn-success"> <i class="fas fa-user mr-2"></i> Account</a>
+                </div>
+                <p class="banner-text">Edica Digital is the world leader in online news and information and seeks to inform, engage and empower the world. Staffed 24 hours, seven days a week.</p>
+            </div>
+        </div>
+    </section>
+    <footer class="edica-footer">
+        <div class="container">
+            <div class="row footer-widget-area">
+                <div class="col-md-4">
+                    <a href="index.html" class="footer-brand-wrapper">
+                        <img src="{{asset('edica/assets/images/logo.svg')}}" alt="edica logo">
+                    </a>
+                    <p class="contact-details">@zidanindratama</p>
+                    <p class="contact-details">+62 812-345-678</p>
+                    <nav class="footer-social-links">
+                        <a href="https://www.facebook.com/zidan.indratama.7"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/zidanindratama"><i class="fab fa-twitter"></i></a>
+                        <a href="https://twitter.com/zidanindratama"><i class="fab fa-instagram"></i></a>
+                    </nav>
+                </div>
+                <div class="col-md-4">
+                    <nav class="footer-nav">
+                        <a href="/" class="nav-link">Home</a>
+                        <a href="/about" class="nav-link">About</a>
+                        <a href="/blog" class="nav-link">Blog</a>
+                    </nav>
+                </div>
+                <div class="col-md-4">
+                    <nav class="footer-nav">
+                        <a href="#!" class="nav-link">Movie Download Service</a>
+                        <a href="https://tugas-akhir-warung-kita.000webhostapp.com/" class="nav-link">Table Service App</a>
+                        <a href="https://www.instagram.com/zidanindratama" class="nav-link">Contact Developer</a>
+                    </nav>
+                </div>
+            </div>
+            <div class="footer-bottom-content">
+                <nav class="nav footer-bottom-nav">
+                    <a href="/">Home</a>
+                    <a href="/about">About</a>
+                    <a href="/blog">Blog</a>
+                </nav>
+                <p class="mb-0">© Edica. 2021 <a href="https://twitter.com/zidanindratama" target="_blank"
+                        rel="noopener noreferrer" class="text-reset">zidanindratama</a> . All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
