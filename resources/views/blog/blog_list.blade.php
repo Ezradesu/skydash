@@ -1,4 +1,5 @@
 @extends('template-blog.home')
+@section('title', 'Edica Blog List')
 @section('content')
         <div class="blog">
             <div class="container">

@@ -9,6 +9,12 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class UserController extends Controller
 {
+    public function __construct(){
+        $this->middleware([
+           'auth',
+            'privilege:Administrator',
+        ]);
+    }
     /**
      * Display a listing of the resource.
      *

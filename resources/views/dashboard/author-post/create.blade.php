@@ -1,18 +1,17 @@
 @extends('template-dashboard.home')
-@section('judul', 'Edit Post')
+@section('judul', 'Tambah Post')
 @section('content')
                     <div class="row">
                         <div class="col-lg-12 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">Edit Post</h4>
-                                    <form class="forms-sample" action="/dashboard/post/{{$post->id}}" method="post" enctype="multipart/form-data">
+                                    <h4 class="card-title">Tambah Post</h4>
+                                    <form class="forms-sample" action="/dashboard/author/post" method="post" enctype="multipart/form-data">
                                         @csrf
-                                        @method('patch')
                                         <div class="form-group row">
                                             <label for="judul" class="col-sm-3 col-form-label">Nama Post</label>
                                             <div class="col-sm-9">
-                                                <input type="text" name="judul" class="form-control @error('judul') is-invalid @enderror" value="{{$post->judul}}" id="judul" placeholder="Judul post">
+                                                <input type="text" name="judul" class="form-control @error('judul') is-invalid @enderror" value="{{old('judul')}}" id="judul" placeholder="Judul post">
                                                 @error('judul')
                                                     <span class="invalid-feedback">Masukkan data yang benar!</span>
                                                 @enderror
@@ -22,13 +21,12 @@
                                             <label for="category_id" class="col-sm-3 col-form-label">Kategory</label>
                                             <div class="col-sm-9">
                                                 <select class="js-example-basic-single w-100 @error('category_id') is-invalid @enderror" name="category_id">
-                                                    @foreach($categories as $result)
-                                                    <option value="{{ $result->id }}"
-                                                    @if($result->id == $post->category_id)
-                                                        selected
-                                                    @endif
-                                                        >{{  $result->name }}</option>
-                                                    @endforeach
+                                                    <option value="" holder>Pilih category</option>
+                                                    @forelse($categories as $category)
+                                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                                                    @empty
+                                                    <option value="" holder>Tidak ada data!</option>
+                                                    @endforelse
                                                 </select>
                                                 @error('category_id')
                                                     <span class="invalid-feedback">Masukkan data yang benar!</span>
@@ -39,22 +37,18 @@
                                             <label for="category_id" class="col-sm-3 col-form-label">Tag</label>
                                             <div class="col-sm-9">
                                                 <select class="js-example-basic-multiple w-100" multiple="multiple" name="tags[]">
-                                                    @foreach($tags as $tag)
-                                                    <option value="{{ $tag->id }}"
-                                                    @foreach($post->tags as $value)
-                                                        @if($tag->id == $value->id)
-                                                        selected
-                                                        @endif
-                                                    @endforeach       	
-                                                        >{{ $tag->name }}</option> 
-                                                    @endforeach
+                                                    @forelse ($tags as $tag)
+                                                    <option value="{{$tag->id}}">{{$tag->name}}</option>
+                                                    @empty
+                                                    <option value="" holder>Tidak ada pilihan</option>
+                                                    @endforelse
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="content" class="col-sm-3 col-form-label">Content</label>
                                             <div class="col-sm-9">
-                                                <textarea name="content" class="form-control @error('content') is-invalid @enderror" id="" cols="30" rows="10" placeholder="masukkan pesan anda di sini!">{{$post->content}}</textarea>
+                                                <textarea name="content" class="form-control @error('content') is-invalid @enderror" id="" cols="30" rows="10" placeholder="masukkan pesan anda di sini!"></textarea>
                                                 @error('content')
                                                     <span class="invalid-feedback">Masukkan data yang benar!</span>
                                                 @enderror
@@ -76,7 +70,7 @@
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                        <a href="/dashboard/post" class="btn btn-light">Kembali</a>
+                                        <a href="/dashboard/author/post" class="btn btn-light">Kembali</a>
                                     </form>
                                 </div>
                             </div>

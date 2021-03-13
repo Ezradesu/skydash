@@ -4,7 +4,7 @@
                 <h1 class="banner-title">This is the end</h1>
                 <div class="banner-btns-wrapper">
                     <a href="/about" class="btn btn-success"> <i class="fas fa-paperclip mr-2"></i> About Us</a>
-                    <a href="/acount" class="btn btn-success"> <i class="fas fa-user mr-2"></i> Account</a>
+                    <a href="/akun" class="btn btn-success"> <i class="fas fa-user mr-2"></i> Account</a>
                 </div>
                 <p class="banner-text">Edica Digital is the world leader in online news and information and seeks to inform, engage and empower the world. Staffed 24 hours, seven days a week.</p>
             </div>

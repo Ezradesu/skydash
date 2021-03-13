@@ -6,7 +6,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title">Edit Post</h4>
-                                    <form class="forms-sample" action="/dashboard/post/{{$post->id}}" method="post" enctype="multipart/form-data">
+                                    <form class="forms-sample" action="/dashboard/author/post/{{$post->id}}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         @method('patch')
                                         <div class="form-group row">
@@ -76,7 +76,7 @@
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                        <a href="/dashboard/post" class="btn btn-light">Kembali</a>
+                                        <a href="/dashboard/author/post" class="btn btn-light">Kembali</a>
                                     </form>
                                 </div>
                             </div>

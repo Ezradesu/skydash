@@ -19,7 +19,7 @@
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                        <button type="reset" class="btn btn-light">Cancel</button>
+                                        <a href="/dashboard/category" class="btn btn-light">Kembali</a>
                                     </form>
                                 </div>
                             </div>

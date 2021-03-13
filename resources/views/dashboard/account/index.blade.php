@@ -1,17 +1,25 @@
 @extends('template-dashboard.home')
-@section('judul', 'Tambah User')
+@section('judul', 'Detail User')
 @section('content')
                     <div class="row">
                         <div class="col-lg-12 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">Tambah User</h4>
-                                    <form class="forms-sample" action="/dashboard/user" method="post">
+                                    <h4 class="card-title">Detail User</h4>
+                                     <div class="mt-5 py-5 d-flex justify-content-center">
+                                        @if($user->gambar == null) 
+                                            <img src="{{asset('skydash/images/faces/default.jpg')}}" alt="" class="img-fluid rounded" style="width: 500px !important;">
+                                        @else
+                                            <img src="/{{$user->gambar}}" alt="" class="img-fluid" class="img-fluid rounded" style="width: 500px !important;">
+                                        @endif
+                                    </div>
+                                    <form class="forms-sample" action="/akun/{{$user->id}}" method="post" enctype="multipart/form-data">
                                         @csrf
+                                        @method('patch')
                                         <div class="form-group row">
                                             <label for="name" class="col-sm-3 col-form-label">Nama User</label>
                                             <div class="col-sm-9">
-                                                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{old('name')}}" id="name" placeholder="Nama user">
+                                                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{$user->name}}" id="name" placeholder="Nama user">
                                                 @error('name')
                                                     <span class="invalid-feedback">Masukkan data yang benar!</span>
                                                 @enderror
@@ -20,7 +28,7 @@
                                         <div class="form-group row">
                                             <label for="email" class="col-sm-3 col-form-label">Email User</label>
                                             <div class="col-sm-9">
-                                                <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{old('email')}}" id="email" placeholder="Email user">
+                                                <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{$user->email}}" id="email" placeholder="Email user" readonly>
                                                 @error('email')
                                                     <span class="invalid-feedback">Masukkan data yang benar!</span>
                                                 @enderror
@@ -29,27 +37,29 @@
                                         <div class="form-group row">
                                             <label for="role" class="col-sm-3 col-form-label">Role User</label>
                                             <div class="col-sm-9">
-                                                <select name="role" class="js-example-basic-single w-100 @error('role') is-invalid @enderror">
-                                                    <option value="Administrator">Administrator</option>
-                                                    <option value="Author">Author</option>
-                                                    <option value="Pengunjung">Pengunjung</option>
-                                                </select>
+                                                <input type="text" name="role" class="form-control @error('role') is-invalid @enderror" value="{{$user->role}}" id="role" placeholder="role user" readonly>
                                                 @error('role')
                                                     <span class="invalid-feedback">Masukkan data yang benar!</span>
                                                 @enderror
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="password" class="col-sm-3 col-form-label">Passwrod User</label>
+                                            <label for="gambar" class="col-sm-3 col-form-label">Gambar</label>
                                             <div class="col-sm-9">
-                                                <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" value="{{old('password')}}" id="password" placeholder="Password user">
-                                                @error('password')
+                                                <input type="file" name="gambar" class="file-upload-default">
+                                                <div class="input-group col-xs-12">
+                                                    <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                                                    <span class="input-group-append">
+                                                    <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                                                    </span>
+                                                </div>
+                                                @error('gambar')
                                                     <span class="invalid-feedback">Masukkan data yang benar!</span>
                                                 @enderror
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                        <a href="/dashboard/user" class="btn btn-light">Kembali</a>
+                                        <a href="/" class="btn btn-light">Kembali</a>
                                     </form>
                                 </div>
                             </div>

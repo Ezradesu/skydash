@@ -18,10 +18,10 @@ Route::get('/about', 'BlogController@about');
 Route::get('/blog', 'BlogController@blog_list');
 Route::get('/blog/{slug}', 'BlogController@blog_isi');
 Route::get('/blog/category/{category}', 'BlogController@list_category');
+Route::get('akun/', 'BlogController@akun');
+Route::patch('akun/{akun}', 'BlogController@update');
 
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
-});
+Route::get('/dashboard', 'HomeController@dashboard');
 
 Route::resource('/dashboard/user', 'UserController');
 Route::resource('/dashboard/category', 'CategoryController');
@@ -30,7 +30,11 @@ Route::get('/dashboard/post/hapus', 'PostController@tampil_hapus');
 Route::get('/dashboard/post/restore/{id}', 'PostController@restore');
 Route::delete('/dashboard/post/kill/{id}', 'PostController@kill');
 Route::resource('/dashboard/post', 'PostController');
+Route::resource('/dashboard/author/post', 'AuthorPostController');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('ckeditor', 'CkeditorController@index');
+Route::post('ckeditor/upload', 'CkeditorController@upload')->name('ckeditor.upload');

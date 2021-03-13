@@ -1,15 +1,11 @@
 @extends('template-dashboard.home')
-@section('judul', 'Halaman Post')
+@section('judul', 'Halaman Post Yang Dihapus')
 @section('content')
                     <div class="row">
                         <div class="col-lg-12 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">List Post</h4>
-                                    <a href="/dashboard/post/create" class="btn btn-info btn-icon-text mb-4">
-                                        <i class="ti-write btn-icon-prepend"></i>
-                                        Tambah Post
-                                    </a>
+                                    <h4 class="card-title">List Post Trashed</h4>
                                     <div class="table-responsive">
                                         <table class="table table-striped">
                                             <thead>
@@ -41,18 +37,18 @@
                                                     <td>{{$post->user->name}}</td>
                                                     <td><img src="{{ asset( $post->gambar ) }}" alt="" style="width: 100px !important;"></td>
                                                     <td>
-                                                        <form action="/dashboard/post/{{$post->id}}" method="post">
+                                                        <form action="/dashboard/post/kill/{{$post->id}}" method="post">
                                                             @csrf
                                                             @method('delete')
-                                                            <a class="btn btn-primary btn-icon-text" href="/blog/{{$post->slug}}">Detail</a>
-                                                            <a class="btn btn-warning btn-icon-text" href="/dashboard/post/{{$post->id}}/edit">Ubah</a>
+                                                            <a class="btn btn-primary btn-icon-text" href="">Detail</a>
+                                                            <a class="btn btn-warning btn-icon-text" href="/dashboard/post/restore/{{$post->id}}">Restore</a>
                                                             <button type="submit" class="btn btn-danger btn-icon-text">Hapus</button>
                                                         </form>
                                                     </td>
                                                 </tr>
                                                 @empty
                                                 <tr>
-                                                    <td colspan="8">Tidak ada data</td>
+                                                    <td colspan="7">Tidak ada data</td>
                                                 </tr>
                                                 @endforelse
                                             </tbody>        

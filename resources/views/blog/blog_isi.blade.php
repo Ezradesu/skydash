@@ -1,4 +1,5 @@
 @extends('template-blog.home')
+@section('title', 'Edica Blog Content')
 @section('content')
     <main class="blog-post">
         @foreach($data as $post)
@@ -33,6 +34,7 @@
                     </section>
                     <section class="comment-section">
                         <h2 class="section-title mb-5" data-aos="fade-up">Leave a Reply</h2>
+                        @include('template-blog.disqus')
                     </section>
                 </div>
             </div>

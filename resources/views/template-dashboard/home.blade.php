@@ -86,10 +86,8 @@
 	<script src="{{asset('skydash/vendors/select2/select2.min.js')}}"></script>
 	<script src="{{asset('skydash/js/select2.js')}}"></script>
 	<script src="{{asset('skydash/js/file-upload.js')}}"></script>
-	<script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
-	<script>
-			CKEDITOR.replace( 'content' );
-	</script>
+	<script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
+	@yield('ckeditor')
 	<!-- End custom js for this page-->
 </body>
 

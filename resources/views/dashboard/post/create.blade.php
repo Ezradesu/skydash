@@ -49,6 +49,7 @@
                                             <label for="content" class="col-sm-3 col-form-label">Content</label>
                                             <div class="col-sm-9">
                                                 <textarea name="content" class="form-control @error('content') is-invalid @enderror" id="" cols="30" rows="10" placeholder="masukkan pesan anda di sini!"></textarea>
+                                                {{-- @include('ckeditor') --}}
                                                 @error('content')
                                                     <span class="invalid-feedback">Masukkan data yang benar!</span>
                                                 @enderror
@@ -70,10 +71,18 @@
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                        <button type="reset" class="btn btn-light">Cancel</button>
+                                        <a href="/dashboard/post" class="btn btn-light">Kembali</a>
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
+@endsection
+@section('ckeditor')
+<script type="text/javascript">
+    CKEDITOR.replace('content', {
+        filebrowserUploadUrl: "{{route('ckeditor.upload', ['_token' => csrf_token() ])}}",
+        filebrowserUploadMethod: 'form'
+    });
+</script>
 @endsection

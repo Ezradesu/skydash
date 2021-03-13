@@ -6,7 +6,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title">List Post</h4>
-                                    <a href="/dashboard/post/create" class="btn btn-info btn-icon-text mb-4">
+                                    <a href="/dashboard/author/post/create" class="btn btn-info btn-icon-text mb-4">
                                         <i class="ti-write btn-icon-prepend"></i>
                                         Tambah Post
                                     </a>
@@ -41,11 +41,11 @@
                                                     <td>{{$post->user->name}}</td>
                                                     <td><img src="{{ asset( $post->gambar ) }}" alt="" style="width: 100px !important;"></td>
                                                     <td>
-                                                        <form action="/dashboard/post/{{$post->id}}" method="post">
+                                                        <form action="/dashboard/author/post/{{$post->id}}" method="post">
                                                             @csrf
                                                             @method('delete')
                                                             <a class="btn btn-primary btn-icon-text" href="/blog/{{$post->slug}}">Detail</a>
-                                                            <a class="btn btn-warning btn-icon-text" href="/dashboard/post/{{$post->id}}/edit">Ubah</a>
+                                                            <a class="btn btn-warning btn-icon-text" href="/dashboard/author/post/{{$post->id}}/edit">Ubah</a>
                                                             <button type="submit" class="btn btn-danger btn-icon-text">Hapus</button>
                                                         </form>
                                                     </td>

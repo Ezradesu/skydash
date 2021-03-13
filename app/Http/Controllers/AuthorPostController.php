@@ -10,12 +10,12 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 
-class PostController extends Controller
+class AuthorPostController extends Controller
 {
     public function __construct(){
         $this->middleware([
             'auth',
-            'privilege:Administrator',
+            'privilege:Author',
         ]);
     }
     /**
@@ -25,8 +25,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::paginate(10);
-        return view('dashboard.post.index', compact('posts'));
+        $posts = Post::where('user_id', Auth::id())->paginate(10);
+        return view('dashboard.author-post.index', compact('posts'));
     }
 
     /**
@@ -41,7 +41,7 @@ class PostController extends Controller
             'tags' => Tag::all(),
         ];
 
-        return view('dashboard.post.create', $data);
+        return view('dashboard.author-post.create', $data);
     }
 
     /**
@@ -77,7 +77,7 @@ class PostController extends Controller
         if($post){
             Alert::success('Berhasil','Data posts berhasil ditambah');
         }
-        return redirect('/dashboard/post'); 
+        return redirect('/dashboard/author/post'); 
     }
 
     /**
@@ -99,13 +99,13 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-         $data = [
+        $data = [
             'categories' => Category::all(),
             'tags' => Tag::all(),
             'post' => Post::findOrFail($id),
         ];
 
-        return view('dashboard.post.edit', $data);
+        return view('dashboard.author-post.edit', $data);
     }
 
     /**
@@ -151,7 +151,7 @@ class PostController extends Controller
         if($validasi){
             Alert::success('Berhasil','Data posts berhasil diubah');
         }
-        return redirect('/dashboard/post'); 
+        return redirect('/dashboard/author/post'); 
     }
 
     /**
@@ -162,34 +162,16 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        $post = Post::findOrFail($id);
-        $validasi = $post->delete($post);
-        if($validasi) :
-            Alert::success('Berhasil!', 'Data post berhasil dihapus');
-        endif;
-        return redirect('/dashboard/post');
-    }
-
-    public function tampil_hapus() {
-        $posts = Post::onlyTrashed()->paginate(10);
-        return view('dashboard.post.delete', compact('posts'));
-    }
-
-    public function restore($id) {
-        $post = Post::withTrashed()->where('id', $id)->first();
-        $validasi = $post->restore();
-        if($validasi) :
-            Alert::success('Berhasil!', 'Data post berhasil direstore');
-        endif;
-        return redirect('/dashboard/post');
-    }
-
-    public function kill($id) {
-        $post = Post::withTrashed()->where('id', $id)->first();
-        $validasi = $post->forceDelete();
-        if($validasi) :
-            Alert::success('Berhasil!', 'Data post berhasil dihapus permanen');
-        endif;
-        return redirect('/dashboard/post/hapus');
+        if(Auth::user()->role !== 'Administrator'){
+            Alert::error('Gagal!', 'Anda tidak punya akses untuk menghapus post');
+            return redirect('/dashboard/author/post');
+        } else {
+            $post = Post::findOrFail($id);
+            $validasi = $post->delete($post);
+            if($validasi) :
+                Alert::success('Berhasil!', 'Data post berhasil dihapus');
+            endif;
+            return redirect('/dashboard/author/post');
+        }
     }
 }
