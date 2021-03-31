@@ -17,6 +17,7 @@
                                                     <th>No</th>
                                                     <th>Email</th>
                                                     <th>Name</th>
+                                                    <th>Picture</th>
                                                     <th>Role</th>
                                                     <th>Action</th>
                                                 </tr>
@@ -27,6 +28,12 @@
                                                     <th>{{$result + $users->firstitem()}}</th>
                                                     <td>{{$user->email}}</td>
                                                     <td>{{$user->name}}</td>
+                                                    <td>@if($user->gambar == null) 
+                                                            <img src="{{asset('skydash/images/faces/default.jpg')}}" alt="" class="img-fluid rounded" style="width: 200px !important;">
+                                                        @else
+                                                            <img src="/{{$user->gambar}}" alt="" class="img-fluid" class="img-fluid rounded" style="width: 200px !important;">
+                                                        @endif
+                                                    </td>
                                                     <td>{{$user->role}}</td>
                                                     <td>
                                                         <form action="/dashboard/user/{{$user->id}}" method="post">

@@ -5,7 +5,7 @@
         @foreach($data as $post)
         <div class="container">
             <h1 class="edica-page-title" data-aos="fade-up">{{$post->judul}}</h1>
-            <p class="edica-blog-post-meta" data-aos="fade-up" data-aos-delay="200">Written by {{$post->user->name}}</p>
+            <p class="edica-blog-post-meta" data-aos="fade-up" data-aos-delay="200">Written by {{$post->user->name}} | {{$post->created_at->format('d/m/Y')}}</p>
             <section class="blog-post-featured-img" data-aos="fade-up" data-aos-delay="300">
                 <img src="{{asset($post->gambar)}}" alt="featured image" class="w-100">
             </section>

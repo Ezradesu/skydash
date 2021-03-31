@@ -5,6 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Primary Meta Tags -->
+    <title>Edica - Bear Witness To History As It Unfolds And Explain</title>
+    <meta name="title" content="Edica - Bear Witness To History As It Unfolds And Explain">
+    <meta name="description" content="Edica Digital is the world leader in online news and information and seeks to inform, engage and empower the world. ">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metatags.io/">
+    <meta property="og:title" content="Edica - Bear Witness To History As It Unfolds And Explain">
+    <meta property="og:description" content="Edica Digital is the world leader in online news and information and seeks to inform, engage and empower the world. ">
+    <meta property="og:image" content="{{asset('edica/assets/images/meta.jpg')}}">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://metatags.io/">
+    <meta property="twitter:title" content="Edica - Bear Witness To History As It Unfolds And Explain">
+    <meta property="twitter:description" content="Edica Digital is the world leader in online news and information and seeks to inform, engage and empower the world. ">
+    <meta property="twitter:image" content="{{asset('edica/assets/images/meta.jpg')}}">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('edica/assets/favicon/apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('edica/assets/favicon/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('edica/assets/favicon/favicon-16x16.png')}}">
+    <link rel="manifest" href="{{asset('edica/assets/favicon/site.webmanifest')}}">
+
     <title>Edica Home</title>
     <link rel="stylesheet" href="{{asset('edica/assets/vendors/flag-icon-css/css/flag-icon.min.css')}}">
     <link rel="stylesheet" href="{{asset('edica/assets/vendors/font-awesome/css/all.min.css')}}">
@@ -29,7 +54,6 @@
 </head>
 
 <body>
-    <div class="edica-loader"></div>
     <header class="edica-header edica-landing-header">
         <div class="container">
             @include('template-blog.navbar')

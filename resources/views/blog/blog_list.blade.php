@@ -4,21 +4,6 @@
         <div class="blog">
             <div class="container">
                 <h1 class="edica-page-title" data-aos="fade-up">Blog</h1>
-                <section class="featured-posts-section">
-                    <div class="row">
-                        @foreach($latest_posts as $latest_post)
-                        <div class="col-md-4 fetured-post blog-post" data-aos="fade-right">
-                            <div class="blog-post-thumbnail-wrapper">
-                                <img src="{{asset($latest_post->gambar)}}" alt="blog post">
-                            </div>
-                            <p class="blog-post-category">{{$latest_post->category->name}} | {{$latest_post->created_at->format('d/m/Y')}}</p>
-                            <a href="/blog/{{$latest_post->slug}}" class="blog-post-permalink">
-                                <h6 class="blog-post-title">{{$latest_post->judul}}</h6>
-                            </a>
-                        </div>
-                        @endforeach
-                    </div>
-                </section>
                 <div class="row">
                     <div class="col-md-8">
                         <section>

@@ -34,8 +34,8 @@
                 </div>
                 <div class="col-md-4">
                     <nav class="footer-nav">
-                        <a href="#!" class="nav-link">Movie Download Service</a>
-                        <a href="https://tugas-akhir-warung-kita.000webhostapp.com/" class="nav-link">Table Service App</a>
+                        <a href="/soon" class="nav-link">Movie Download Service</a>
+                        <a href="https://warungkita001.000webhostapp.com/" class="nav-link">Table Service App</a>
                         <a href="https://www.instagram.com/zidanindratama" class="nav-link">Contact Developer</a>
                     </nav>
                 </div>

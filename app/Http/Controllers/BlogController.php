@@ -63,6 +63,10 @@ class BlogController extends Controller
         return view('blog.about');
     }
 
+    public function soon(){
+        return view('blog.coming');
+    }
+
     public function blog_list() {
         $category_widget = Category::all();
         $latest_posts = Post::orderBy('created_at', 'desc')->take(3)->get();
