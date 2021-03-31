@@ -13,14 +13,14 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://metatags.io/">
+    <meta property="og:url" content="https://edicablog.000webhostapp.com/">
     <meta property="og:title" content="Edica - Bear Witness To History As It Unfolds And Explain">
     <meta property="og:description" content="Edica Digital is the world leader in online news and information and seeks to inform, engage and empower the world. ">
     <meta property="og:image" content="{{asset('edica/assets/images/meta.jpg')}}">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://metatags.io/">
+    <meta property="twitter:url" content="https://edicablog.000webhostapp.com/">
     <meta property="twitter:title" content="Edica - Bear Witness To History As It Unfolds And Explain">
     <meta property="twitter:description" content="Edica Digital is the world leader in online news and information and seeks to inform, engage and empower the world. ">
     <meta property="twitter:image" content="{{asset('edica/assets/images/meta.jpg')}}">
